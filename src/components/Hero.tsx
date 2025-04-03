@@ -11,11 +11,11 @@ const Hero = () => {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5 }}
         >
-          <h1 className="text-4xl md:text-5xl font-bold text-[#3DDC84] mb-4">
+          <h1 className="text-4xl md:text-7xl font-bold text-[#3DDC84] mb-4">
             Zeeshan Virani
           </h1>
           <h2 className="text-lg md:text-xl text-gray-100 mb-6">
-            Software Engineer
+            Software Engineer @ Midtronics
           </h2>
           <p className="text-lg text-gray-400 mb-8">
             Texas A&M Alumni passionate about building exceptional digital experiences.
