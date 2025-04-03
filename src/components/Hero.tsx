@@ -1,6 +1,6 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { Github, Linkedin, Mail } from 'lucide-react';
+import { Github, Linkedin, Mail, Download } from 'lucide-react';
 
 const Hero = () => {
   return (
@@ -11,16 +11,20 @@ const Hero = () => {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5 }}
         >
-          <h1 className="text-4xl md:text-5xl font-bold text-gray-100 mb-4">
-            Hi, I'm Zeeshan Virani
+          <h1 className="text-4xl md:text-5xl font-bold text-[#3DDC84] mb-4">
+            Zeeshan Virani
           </h1>
-          <h2 className="text-2xl md:text-3xl text-gray-300 mb-6">
+          <h2 className="text-lg md:text-xl text-gray-100 mb-6">
             Software Engineer
           </h2>
           <p className="text-lg text-gray-400 mb-8">
             Texas A&M Alumni passionate about building exceptional digital experiences.
           </p>
-          <div className="flex space-x-4">
+          <div className="flex items-center space-x-4">
+            <button className="inline-flex items-center px-6 py-3 bg-[#3DDC84] text-gray-900 rounded-full hover:bg-[#32B76E] transition-colors">
+              <Download size={20} className="mr-2" />
+              Download Resume
+            </button>
             <a
               href="https://github.com/zvirani99"
               target="_blank"
@@ -52,13 +56,24 @@ const Hero = () => {
           transition={{ duration: 0.5, delay: 0.2 }}
           className="relative aspect-square"
         >
-          <div className="w-full h-full rounded-full border-4 border-[#3DDC84] p-2">
+          <motion.div
+            className="w-full h-full rounded-full border-4 p-2"
+            style={{ borderColor: '#3DDC84' }}
+            animate={{
+              borderColor: ['#3DDC84', '#2563EB', '#3DDC84'],
+            }}
+            transition={{
+              duration: 4,
+              repeat: Infinity,
+              ease: 'linear',
+            }}
+          >
             <img
               src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=800&q=80"
               alt="Zeeshan Virani"
               className="rounded-full w-full h-full object-cover"
             />
-          </div>
+          </motion.div>
         </motion.div>
       </div>
     </section>

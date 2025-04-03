@@ -69,7 +69,7 @@ const Projects = () => {
               initial={{ opacity: 0, y: 20 }}
               animate={inView ? { opacity: 1, y: 0 } : {}}
               transition={{ duration: 0.5, delay: index * 0.1 }}
-              className="bg-darkgray rounded-lg shadow-lg overflow-hidden"
+              className="bg-darkgray rounded-lg shadow-lg overflow-hidden border border-black border-opacity-40"
             >
               <img
                 src={projectImages[index % projectImages.length]}
@@ -83,13 +83,6 @@ const Projects = () => {
                 <p className="text-gray-400 mb-4 h-20 overflow-hidden">
                   {repo.description || 'No description available'}
                 </p>
-                {repo.language && (
-                  <div className="mb-4">
-                    <span className="inline-block bg-gray-800 rounded-full px-3 py-1 text-sm font-semibold text-[#3DDC84]">
-                      {repo.language}
-                    </span>
-                  </div>
-                )}
                 <div className="flex space-x-4">
                   <a
                     href={repo.html_url}
