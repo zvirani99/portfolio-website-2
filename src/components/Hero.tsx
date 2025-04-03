@@ -6,6 +6,7 @@ const Hero = () => {
   return (
     <section id="home" className="min-h-screen flex items-center justify-center pt-16">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 grid md:grid-cols-2 gap-8 items-center">
+        {/* Left Column: Text Content */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
@@ -18,7 +19,7 @@ const Hero = () => {
             Software Engineer @ Midtronics
           </h2>
           <p className="text-lg text-gray-400 mb-8">
-            Texas A&M Alumni passionate about building exceptional digital experiences.
+            2006 Time Magazine's Person of the Year.
           </p>
           <div className="flex items-center space-x-4">
             <button className="inline-flex items-center px-6 py-3 bg-[#3DDC84] text-gray-900 rounded-full hover:bg-[#32B76E] transition-colors">
@@ -50,31 +51,40 @@ const Hero = () => {
           </div>
         </motion.div>
 
-        <motion.div
-          initial={{ opacity: 0, scale: 0.9 }}
-          animate={{ opacity: 1, scale: 1 }}
-          transition={{ duration: 0.5, delay: 0.2 }}
-          className="relative aspect-square"
-        >
+        {/* Right Column: Profile Picture Section */}
+        <div className="relative aspect-square flex items-center justify-center">
+          {/* Outer motion div for entrance animation */}
           <motion.div
-            className="w-full h-full rounded-full border-4 p-2"
-            style={{ borderColor: '#3DDC84' }}
-            animate={{
-              borderColor: ['#3DDC84', '#2563EB', '#3DDC84'],
-            }}
-            transition={{
-              duration: 4,
-              repeat: Infinity,
-              ease: 'linear',
-            }}
+            initial={{ opacity: 0, scale: 0.9 }}
+            animate={{ opacity: 1, scale: 1 }}
+            transition={{ duration: 0.5, delay: 0.2 }}
+            className="relative w-full max-w-[300px] md:max-w-[400px] aspect-square"
           >
-            <img
-              src="https://media.licdn.com/dms/image/v2/D5603AQGRftpmfVCfLg/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1728351839058?e=1749081600&v=beta&t=DrNCG5QVwblAHJiNnaSDecwsii8XGo8_n-qgnrw45UY"
-              alt="Zeeshan Virani"
-              className="rounded-full w-full h-full object-cover"
-            />
+            {/* Container for the actual image */}
+            <div className="w-full h-full bg-darkgray rounded-full overflow-hidden p-1 relative z-10"> {/* Added z-10 */}
+              <img
+                src="https://media.licdn.com/dms/image/v2/D5603AQGRftpmfVCfLg/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1728351839058?e=1749081600&v=beta&t=DrNCG5QVwblAHJiNnaSDecwsii8XGo8_n-qgnrw45UY"
+                alt="Zeeshan Virani"
+                className="rounded-full w-full h-full object-cover"
+              />
+            </div>
+
+            {/* Inner motion div for the rotating border */}
+            <motion.div
+              className="absolute -inset-1 rounded-full" // Position and shape
+              style={{
+                padding: '4px', // Creates the border thickness
+                background: `conic-gradient(#3DDC84, transparent 30%, transparent 70%, #3DDC84)`, // The gradient for the border
+              }}
+              animate={{ rotate: 360 }} // Animate rotation
+              transition={{
+                duration: 2,
+                ease: 'linear',
+                repeat: Infinity, // Loop indefinitely
+              }}
+            /> {/* No content inside the border div */}
           </motion.div>
-        </motion.div>
+        </div>
       </div>
     </section>
   );

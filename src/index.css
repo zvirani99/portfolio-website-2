@@ -4,4 +4,8 @@
 
 body {
   font-family: 'JetBrains Mono', monospace;
+  background-color: rgb(28, 28, 34); /* Ensure body background matches */
 }
+
+/* Remove the previous CSS animation styles */
+/* No .animated-border-container or @keyframes rotate needed anymore */
