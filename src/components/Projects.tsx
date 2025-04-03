@@ -60,9 +60,10 @@ const Projects = () => {
         >
           <h2 className="text-3xl font-bold text-gray-100 mb-4">Projects</h2>
           <div className="w-20 h-1 bg-[#3DDC84] mx-auto mb-8" />
+					<h3 className="text-2xl font-semibold text-gray-400 mb-4">work in progress</h3>
         </motion.div>
 
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+        {/* <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
           {repos.map((repo, index) => (
             <motion.div
               key={repo.id}
@@ -106,7 +107,7 @@ const Projects = () => {
               </div>
             </motion.div>
           ))}
-        </div>
+        </div> */}
       </div>
     </section>
   );
