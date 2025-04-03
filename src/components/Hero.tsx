@@ -34,7 +34,7 @@ const Hero = () => {
               <Github size={24} />
             </a>
             <a
-              href="https://linkedin.com/in/zvirani"
+              href="https://www.linkedin.com/in/zeeshanvirani99/"
               target="_blank"
               rel="noopener noreferrer"
               className="text-gray-400 hover:text-[#3DDC84] transition-colors"
@@ -69,7 +69,7 @@ const Hero = () => {
             }}
           >
             <img
-              src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=800&q=80"
+              src="https://media.licdn.com/dms/image/v2/D5603AQGRftpmfVCfLg/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1728351839058?e=1749081600&v=beta&t=DrNCG5QVwblAHJiNnaSDecwsii8XGo8_n-qgnrw45UY"
               alt="Zeeshan Virani"
               className="rounded-full w-full h-full object-cover"
             />
