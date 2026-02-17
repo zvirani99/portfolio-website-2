@@ -63,7 +63,7 @@ const Hero = () => {
             {/* Container for the actual image */}
             <div className="w-full h-full bg-darkgray rounded-full overflow-hidden p-1 relative z-10"> {/* Added z-10 */}
               <img
-                src="./src/headshot.jpg"
+                src="/headshot.JPG"
                 alt="Zeeshan Virani"
                 className="rounded-full w-full h-full object-cover"
               />
