@@ -16,7 +16,7 @@ const Hero = () => {
             Zeeshan Virani
           </h1>
           <h2 className="text-lg md:text-xl text-gray-100 mb-6">
-            Software Engineer @ Midtronics
+            Senior Software Engineer @ Midtronics
           </h2>
           <p className="text-lg text-gray-400 mb-8">
             2006 Time Magazine's Person of the Year.
@@ -63,7 +63,7 @@ const Hero = () => {
             {/* Container for the actual image */}
             <div className="w-full h-full bg-darkgray rounded-full overflow-hidden p-1 relative z-10"> {/* Added z-10 */}
               <img
-                src="https://media.licdn.com/dms/image/v2/D5603AQGRftpmfVCfLg/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1728351839058?e=1749081600&v=beta&t=DrNCG5QVwblAHJiNnaSDecwsii8XGo8_n-qgnrw45UY"
+                src="./src/headshot.jpg"
                 alt="Zeeshan Virani"
                 className="rounded-full w-full h-full object-cover"
               />
