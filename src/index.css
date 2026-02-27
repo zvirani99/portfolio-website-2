@@ -2,10 +2,69 @@
 @tailwind components;
 @tailwind utilities;
 
-body {
-  font-family: 'JetBrains Mono', monospace;
-  background-color: rgb(28, 28, 34); /* Ensure body background matches */
+:root {
+  --color-bg: rgb(28, 28, 34);
+  --color-surface: rgb(28, 28, 34);
+  --color-text-primary: rgb(243, 244, 246);
+  --color-text-secondary: rgb(209, 213, 219);
+  --color-text-muted: rgb(156, 163, 175);
+  --color-accent: #3ddc84;
+  --color-accent-hover: #32b76e;
+  --color-accent-contrast: rgb(17, 24, 39);
 }
 
-/* Remove the previous CSS animation styles */
-/* No .animated-border-container or @keyframes rotate needed anymore */
+:root[data-theme='earth'] {
+  --color-bg:               #f5f0e8;
+  --color-surface:          #e8ddd0;
+  --color-text-primary:     #1c1814;
+  --color-text-secondary:   #3d3830;
+  --color-text-muted:       #b09880;
+  --color-accent:           #a0745a;
+  --color-accent-hover:     #8a5f47;
+  --color-accent-contrast:  #f5f0e8;
+}
+
+body {
+  font-family: 'JetBrains Mono', monospace;
+  background-color: var(--color-bg);
+}
+
+.theme-bg {
+  background-color: var(--color-bg);
+}
+
+.theme-surface {
+  background-color: var(--color-surface);
+}
+
+.theme-text-primary {
+  color: var(--color-text-primary);
+}
+
+.theme-text-secondary {
+  color: var(--color-text-secondary);
+}
+
+.theme-text-muted {
+  color: var(--color-text-muted);
+}
+
+.theme-accent {
+  color: var(--color-accent);
+}
+
+.theme-accent-bg {
+  background-color: var(--color-accent);
+}
+
+.theme-accent-bg-hover:hover {
+  background-color: var(--color-accent-hover);
+}
+
+.theme-accent-hover:hover {
+  color: var(--color-accent);
+}
+
+.theme-accent-contrast {
+  color: var(--color-accent-contrast);
+}

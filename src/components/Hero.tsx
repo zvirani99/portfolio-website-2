@@ -2,7 +2,12 @@ import React from 'react';
 import { motion } from 'framer-motion';
 import { Github, Linkedin, Mail, Download, Palette } from 'lucide-react';
 
-const Hero = () => {
+interface HeroProps {
+  onToggleTheme: () => void;
+  theme: 'default' | 'ocean';
+}
+
+const Hero = ({ onToggleTheme, theme }: HeroProps) => {
   return (
     <section id="home" className="min-h-screen flex items-center justify-center pt-16">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 grid md:grid-cols-2 gap-8 items-center">
@@ -12,17 +17,17 @@ const Hero = () => {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5 }}
         >
-          <h1 className="text-4xl md:text-7xl font-bold text-[#3DDC84] mb-4">
+          <h1 className="text-4xl md:text-7xl font-bold theme-accent mb-4">
             Zeeshan Virani
           </h1>
-          <h2 className="text-lg md:text-xl text-gray-100 mb-6">
+          <h2 className="text-lg md:text-xl theme-text-primary mb-6">
             Senior Software Engineer @ Midtronics
           </h2>
-          <p className="text-lg text-gray-400 mb-8">
+          <p className="text-lg theme-text-muted mb-8">
             2006 Time Magazine's Person of the Year.
           </p>
           <div className="flex items-center space-x-4">
-            <button className="inline-flex items-center px-6 py-3 bg-[#3DDC84] text-gray-900 rounded-full hover:bg-[#32B76E] transition-colors">
+            <button className="inline-flex items-center px-6 py-3 rounded-full transition-colors theme-accent-bg theme-accent-contrast theme-accent-bg-hover">
               <Download size={20} className="mr-2" />
               Download Resume
             </button>
@@ -30,7 +35,7 @@ const Hero = () => {
               href="https://github.com/zvirani99"
               target="_blank"
               rel="noopener noreferrer"
-              className="text-gray-400 hover:text-[#3DDC84] transition-colors"
+              className="theme-text-muted theme-accent-hover transition-colors"
             >
               <Github size={24} />
             </a>
@@ -38,22 +43,26 @@ const Hero = () => {
               href="https://www.linkedin.com/in/zeeshanvirani99/"
               target="_blank"
               rel="noopener noreferrer"
-              className="text-gray-400 hover:text-[#3DDC84] transition-colors"
+              className="theme-text-muted theme-accent-hover transition-colors"
             >
               <Linkedin size={24} />
             </a>
             <a
               href="mailto:me@zeeshanvirani.com"
-              className="text-gray-400 hover:text-[#3DDC84] transition-colors"
+              className="theme-text-muted theme-accent-hover transition-colors"
             >
               <Mail size={24} />
             </a>
-            <a
-              href="#"
-              className="text-gray-400 hover:text-[#3DDC84] transition-colors"
+            <button
+              type="button"
+              onClick={onToggleTheme}
+              aria-label="Toggle color theme"
+              className={`transition-colors ${
+                theme === 'ocean' ? 'theme-accent' : 'theme-text-muted theme-accent-hover'
+              }`}
             >
               <Palette size={24} />
-            </a>
+            </button>
           </div>
         </motion.div>
 
@@ -67,7 +76,7 @@ const Hero = () => {
             className="relative w-full max-w-[300px] md:max-w-[400px] aspect-square"
           >
             {/* Container for the actual image */}
-            <div className="w-full h-full bg-darkgray rounded-full overflow-hidden p-1 relative z-10"> {/* Added z-10 */}
+            <div className="w-full h-full theme-surface rounded-full overflow-hidden p-1 relative z-10">
               <img
                 src="/headshot.JPG"
                 alt="Zeeshan Virani"
@@ -80,7 +89,8 @@ const Hero = () => {
               className="absolute -inset-1 rounded-full" // Position and shape
               style={{
                 padding: '4px', // Creates the border thickness
-                background: `conic-gradient(#3DDC84, transparent 30%, transparent 70%, #3DDC84)`, // The gradient for the border
+                background:
+                  'conic-gradient(var(--color-accent), transparent 30%, transparent 70%, var(--color-accent))', // The gradient for the border
               }}
               animate={{ rotate: 360 }} // Animate rotation
               transition={{

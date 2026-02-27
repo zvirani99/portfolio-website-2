@@ -16,7 +16,7 @@ const About = () => {
   };
 
   return (
-    <section id="about" className="py-20 bg-darkgray">
+    <section id="about" className="py-20 theme-bg">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <motion.div
           ref={ref}
@@ -25,21 +25,21 @@ const About = () => {
           transition={{ duration: 0.5 }}
           className="text-center mb-12"
         >
-          <h2 className="text-3xl font-bold text-gray-100 mb-4">Education</h2>
-          <div className="w-20 h-1 bg-[#3DDC84] mx-auto" />
+          <h2 className="text-3xl font-bold theme-text-primary mb-4">Education</h2>
+          <div className="w-20 h-1 theme-accent-bg mx-auto" />
         </motion.div>
 
         <motion.div
           initial={{ opacity: 0, x: -20 }}
           animate={inView ? { opacity: 1, x: 0 } : {}}
           transition={{ duration: 0.5, delay: 0.2 }}
-          className="text-center text-gray-300"
+          className="text-center theme-text-secondary"
         >
           <div className="mb-8">
             <h3 className="text-2xl font-semibold mb-4">{education.degree}</h3>
             <p className="text-xl mb-2">{education.university}</p>
-            <p className="text-gray-400">{education.graduation}</p>
-            <p className="text-gray-400">{education.location}</p>
+            <p className="theme-text-muted">{education.graduation}</p>
+            <p className="theme-text-muted">{education.location}</p>
           </div>
         </motion.div>
       </div>
