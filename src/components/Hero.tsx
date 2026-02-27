@@ -1,6 +1,6 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { Github, Linkedin, Mail, Download } from 'lucide-react';
+import { Github, Linkedin, Mail, Download, Palette } from 'lucide-react';
 
 const Hero = () => {
   return (
@@ -47,6 +47,12 @@ const Hero = () => {
               className="text-gray-400 hover:text-[#3DDC84] transition-colors"
             >
               <Mail size={24} />
+            </a>
+            <a
+              href="#"
+              className="text-gray-400 hover:text-[#3DDC84] transition-colors"
+            >
+              <Palette size={24} />
             </a>
           </div>
         </motion.div>
